@@ -23,8 +23,8 @@ public class QuestaoDB {
 
         // pares chave-valor: nomes das colunas - valores
         valores.put(QuestoesDbSchema.QuestoesTbl.Cols.UUID, q.getId().toString());
-        valores.put(QuestoesDbSchema.QuestoesTbl.Cols.COLOU, colador);
         valores.put(QuestoesDbSchema.QuestoesTbl.Cols.TEXTO_QUESTAO, mStaticContext.getString(q.getTextoRespostaId()));
+        valores.put(QuestoesDbSchema.QuestoesTbl.Cols.COLOU, colador);
         valores.put(QuestoesDbSchema.QuestoesTbl.Cols.QUESTAO_CORRETA, respondeu);
 
         return valores;
@@ -32,7 +32,6 @@ public class QuestaoDB {
     public void addQuestao(Questao q, boolean resposta, boolean colador){
 
         ContentValues valores = getValoresConteudo(q, resposta, colador);
-        Log.i("db", valores.toString());
         mDatabase.insert(QuestoesDbSchema.QuestoesTbl.NOME, null, valores);
     }
     public void updateQuestao(Questao q){

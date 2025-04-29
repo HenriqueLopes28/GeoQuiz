@@ -23,7 +23,6 @@ public class QuestoesDBHelper extends SQLiteOpenHelper {
                 QuestoesDbSchema.QuestoesTbl.Cols.COLOU+ ","+
                 QuestoesDbSchema.QuestoesTbl.Cols.QUESTAO_CORRETA + ","+
                 QuestoesDbSchema.QuestoesTbl.Cols.TEXTO_QUESTAO+ ")");
-        Log.i("Banco de dados", db.toString());
     }
 
     @Override
